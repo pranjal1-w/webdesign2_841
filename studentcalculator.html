@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+    @import url('https://fonts.googleapis.com/css2?family=Sora:wght@300;400;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+
+/* ── CSS Variables ── */
+:root {
+  --bg:        #0d0f1a;
+  --surface:   #141626;
+  --card:      #1a1d30;
+  --border:    #2a2e4a;
+  --accent:    #5b6ef5;
+  --accent2:   #a78bfa;
+  --success:   #34d399;
+  --warning:   #fbbf24;
+  --danger:    #f87171;
+  --text:      #e8eaf6;
+  --muted:     #7b80a8;
+  --radius:    14px;
+  --shadow:    0 20px 60px rgba(0,0,0,0.5);
+}
+
+/* ── Reset & Base ── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+body.bg {
+  min-height: 100vh;
+  background: var(--bg);
+  background-image:
+    radial-gradient(ellipse 80% 50% at 20% -10%, rgba(91,110,245,0.18) 0%, transparent 60%),
+    radial-gradient(ellipse 60% 40% at 80% 110%, rgba(167,139,250,0.12) 0%, transparent 60%);
+  font-family: 'Sora', sans-serif;
+  color: var(--text);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ── Grid / Layout ── */
+.container { width: 100%; max-width: 1100px; padding: 2rem 1rem; }
+.row { display: flex; flex-wrap: wrap; }
+.justify-content-center { justify-content: center; }
+.col-md-6 { width: 100%; max-width: 560px; }
+.py-5 { padding-top: 3rem; padding-bottom: 3rem; }
+.mb-3 { margin-bottom: 1.1rem; }
+.mb-4 { margin-bottom: 1.4rem; }
+.mt-4 { margin-top: 1.4rem; }
+.d-grid { display: grid; }
+.d-none { display: none !important; }
+
+/* ── Card ── */
+.card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  overflow: hidden;
+  animation: slideUp .55s cubic-bezier(.22,.68,0,1.2) both;
+}
+
+.card-body { padding: 2.2rem 2.4rem; }
+
+.shadow-lg { box-shadow: var(--shadow); }
+
+/* ── Typography ── */
+h2 {
+  font-size: 1.55rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  background: linear-gradient(135deg, var(--text) 30%, var(--accent2));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.text-center { text-align: center; }
+
+.text-muted {
+  color: var(--muted);
+  font-size: .875rem;
+  font-weight: 300;
+}
+
+/* ── Label ── */
+.for-labal {
+  display: block;
+  font-size: .8rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: .08em;
+  color: var(--muted);
+  margin-bottom: .45rem;
+}
+
+/* ── Input ── */
+.form-control {
+  width: 100%;
+  padding: .75rem 1rem;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  color: var(--text);
+  font-family: 'JetBrains Mono', monospace;
+  font-size: .95rem;
+  outline: none;
+  transition: border-color .2s, box-shadow .2s;
+}
+
+.form-control::placeholder { color: var(--muted); }
+
+.form-control:focus {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px rgba(91,110,245,0.18);
+}
+
+/* ── Button ── */
+.btn {
+  padding: .82rem 1.4rem;
+  border: none;
+  border-radius: 8px;
+  font-family: 'Sora', sans-serif;
+  font-size: .92rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform .15s, box-shadow .15s, filter .15s;
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, var(--accent), var(--accent2));
+  color: #fff;
+  box-shadow: 0 4px 20px rgba(91,110,245,0.35);
+  letter-spacing: .03em;
+}
+
+.btn-primary:hover {
+  filter: brightness(1.12);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 28px rgba(91,110,245,0.45);
+}
+
+.btn-primary:active { transform: translateY(0); }
+
+/* ── Result Box ── */
+#resultBox {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1.4rem;
+  animation: fadeIn .35s ease both;
+}
+
+#resultBox table {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: .85rem;
+}
+
+#resultBox th {
+  text-align: left;
+  padding: .5rem .7rem;
+  color: var(--muted);
+  font-size: .75rem;
+  text-transform: uppercase;
+  letter-spacing: .07em;
+  border-bottom: 1px solid var(--border);
+}
+
+#resultBox td {
+  padding: .55rem .7rem;
+  border-bottom: 1px solid rgba(255,255,255,0.04);
+}
+
+#resultBox tr:last-child td { border-bottom: none; }
+
+/* Grade colour chips */
+.grade-a { color: var(--success); font-weight: 600; }
+.grade-b { color: var(--accent2); font-weight: 600; }
+.grade-c { color: var(--warning); font-weight: 600; }
+.grade-f { color: var(--danger);  font-weight: 600; }
+
+/* ── Animations ── */
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(28px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(6px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ── Scrollbar ── */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: var(--bg); }
+::-webkit-scrollbar-thumb { background: var(--border); border-radius: 99px; }
+
+/* ── Responsive ── */
+@media (max-width: 600px) {
+  .card-body { padding: 1.6rem 1.2rem; }
+  h2 { font-size: 1.25rem; }
+}
+</style>
+</head>
+<body class="bg">
+    <div class="container py-5">
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <div class="card shadow-lg">
+                    <div class="card-body p-4">
+                        <h2 class="text-center mb-3">Student Result Calculator</h2>
+                        <p  class="text-center text-muted">
+                            enter number of students
+                        </p>
+                        <div class="mb-3">
+                            <label class="for-labal">Number of subjects</label>
+                            <input
+                            type="number"
+                            id="numsubjects"
+                            class="form-control"
+                            placeholder="Enter number of Subjects"
+                            min="1"
+                            max="20"
+                            >
+                        </div>
+                        <div class="d-grid">
+                            <button class="btn btn-primary"
+                            onclick="calculateResult()">Calculate Result</button>
+                        </div>
+                        <div id="resultBox" class="mt-4 d-none"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="cal.js"></script>
+</body>
+</html>

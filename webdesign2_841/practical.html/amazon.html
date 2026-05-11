@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<title>Amazon Clone Navbar</title>
+
+<!-- Bootstrap CSS -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<style>
+
+/* Logo Style */
+.logo{
+    padding:10px;
+    font-size:25px;
+    font-weight:bold;
+}
+
+.smile{
+    width:56px;
+    height:15px;
+    border-bottom:5px solid orange;
+    border-radius:50%;
+    margin-top:-7px;
+}
+
+.navbar{
+    width:100%;
+    display:flex;
+    align-items:center;
+    gap:15px;
+
+    flex-wrap: nowrap;     /* stop wrapping */
+    overflow-x: auto;      /* slide instead */
+}
+
+/* Prevent text breaking */
+.navbar > *{
+    white-space: nowrap;
+}
+
+/* Search bar grows */
+.navbar form{
+    flex-grow:1;
+    min-width:300px;
+}
+
+.nav-item-box{
+    font-size:14px;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<header>
+
+<nav class="navbar navbar-light bg-light px-3">
+
+<!-- Logo -->
+<div class="logo">
+amazon.in
+<div class="smile"></div>
+</div>
+
+<!-- Delivery Location -->
+<div class="nav-item-box">
+Deliver to <br>
+<b>India</b>
+</div>
+
+<!-- Search Bar -->
+<form class="d-flex mx-3" role="search">
+
+<input class="form-control me-2"
+type="search"
+placeholder="Search Amazon">
+
+<button class="btn btn-outline-success"
+type="submit">
+Search
+</button>
+
+</form>
+
+<!-- Language Dropdown -->
+<div class="dropdown nav-item-box">
+
+<button class="btn btn-secondary dropdown-toggle"
+type="button"
+data-bs-toggle="dropdown">
+
+Language
+
+</button>
+
+<ul class="dropdown-menu">
+
+<li>
+<a class="dropdown-item" href="#">English</a>
+</li>
+
+<li>
+<a class="dropdown-item" href="#">Español</a>
+</li>
+
+<li>
+<a class="dropdown-item" href="#">Français</a>
+</li>
+
+</ul>
+
+</div>
+
+<!-- Account Dropdown -->
+<div class="dropdown nav-item-box">
+
+<span>hello, sign in</span><br>
+
+<button class="btn btn-secondary dropdown-toggle"
+type="button"
+data-bs-toggle="dropdown">
+
+Account & Lists
+
+</button>
+
+<ul class="dropdown-menu">
+
+<li>
+<a class="dropdown-item" href="#">Edit Your Profile</a>
+</li>
+
+<li>
+<a class="dropdown-item" href="#">Manage Content</a>
+</li>
+
+<li>
+<a class="dropdown-item" href="#">Feedback</a>
+</li>
+
+</ul>
+
+</div>
+
+<!-- Orders -->
+<div class="nav-item-box">
+Returns <br>
+<b>& Orders</b>
+</div>
+
+<!-- Cart -->
+<div class="nav-item-box">
+🛒 Cart
+</div>
+
+</nav>
+
+</header>
+<nav class="navbar navbar-expand-lg bg-body-tertiary">
+  <div class="container-fluid">
+    
+    
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <a class="navbar-brand" href="#">all</a>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="#">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Features</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Pricing</a>
+        </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>

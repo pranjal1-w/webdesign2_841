@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Even Odd and Loop Example</title>
+</head>
+
+<body>
+
+<h2>Even or Odd Checker</h2>
+
+<!-- Input field -->
+<label>Enter a number:</label>
+<input type="number" id="num">
+
+<!-- Button -->
+<button onclick="checkNumber()">Check</button>
+
+<!-- Result display -->
+<p id="result"></p>
+<p id="numbers"></p>
+
+<script>
+function checkNumber() {
+    let n = document.getElementById("num").value;
+    let resultText = "";
+    let numberList = "";
+
+    // Even or Odd check
+    if (n % 2 == 0) {
+        resultText = n + " is Even";
+    } else {
+        resultText = n + " is Odd";
+    }
+
+    document.getElementById("result").innerHTML = resultText;
+
+    // Loop from 1 to n
+    for (let i = 1; i <= n; i++) {
+        numberList += i + " ";
+    }
+
+    document.getElementById("numbers").innerHTML =
+        "Numbers from 1 to " + n + ":<br>" + numberList;
+}
+</script>
+
+</body>
+</html>

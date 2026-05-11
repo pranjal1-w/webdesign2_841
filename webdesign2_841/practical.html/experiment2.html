@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TechStore</title>
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="STYLE2.CSS">
+</head>
+
+<body>
+
+<!-- ===== Navbar ===== -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container">
+        <a class="navbar-brand" href="#">TechStore</a>
+
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navMenu">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item"><a class="nav-link active" href="#">Home</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">Products</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">About</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">Contact</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<!-- ===== Product Section ===== -->
+<div class="container my-5">
+    <div class="row g-4">
+
+        <!-- Product 1 -->
+        <div class="col-sm-12 col-md-6 col-lg-4">
+            <div class="card">
+                <img src="https://www.honor.com/content/dam/honor/uk/blog/2024/5-things-a-smartphone-can-do/imgs-01.jpg" class="card-img-top" alt="Product">
+                <div class="card-body">
+                    <h5 class="card-title">Smartphone</h5>
+                    <p class="card-text">Latest Android smartphone with great features.</p>
+                    <span class="badge bg-success">New</span>
+                    <h6 class="mt-2">₹20,000</h6>
+                    <button class="btn btn-primary mt-2" data-bs-toggle="modal" data-bs-target="#modal1">
+                        View Details
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Product 2 -->
+        <div class="col-sm-12 col-md-6 col-lg-4">
+            <div class="card">
+                <img src="https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcSXZ4IpeD28tsm4VvP8YlFZARy0d099AbPK4WELMpIqRrVm8egT0dCMQDH-63Hl7H0rCTliJM58W6Yi7M165Yh0JiC2jE5xcCT8Ka4Fv2AgpEXO58-u4hpkm-k" class="card-img-top" alt="Product">
+                <div class="card-body">
+                    <h5 class="card-title">Laptop</h5>
+                    <p class="card-text">Powerful laptop for work and gaming.</p>
+                    <span class="badge bg-danger">Sale</span>
+                    <h6 class="mt-2">₹55,000</h6>
+                    <button class="btn btn-primary mt-2" data-bs-toggle="modal" data-bs-target="#modal2">
+                        View Details
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Product 3 -->
+        <div class="col-sm-12 col-md-6 col-lg-4">
+            <div class="card">
+                <img src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBxEQEhAQDxEPDw8SDw8RDxAPDw8PDxEPFhIWFhgVFRUYHSggGBolHRUVITEhJSkrLi4uFx8zODMsNygtLisBCgoKDg0OFxAPGCsfHR0rLS0tLSstKy0rKy0tKystLSsrKy0rLS0yKy0tKy0rLTQ3LS0rLS0tKy0tKy0tKysrLf/AABEIAOEA4QMBIgACEQEDEQH/xAAcAAEAAgMBAQEAAAAAAAAAAAAABAUCAwYBBwj/xABBEAACAQICBwQHBgQEBwAAAAAAAQIDEQQhBQYSMUFRYXGBkaETIjJScrHBByNC0eHwM6Ky8ZLCw9IUJDRDU2KC/8QAFwEBAQEBAAAAAAAAAAAAAAAAAAECA//EAB0RAQEBAQEAAwEBAAAAAAAAAAABAhExEiFBUQP/2gAMAwEAAhEDEQA/APuIAAAAAAAAAAAAAAAAAAAxqVFFXk0kt7bsinxmslKGULzfPcgvF0DkqmtM3uUY9iv8zKjrFN8V4InV+NdWCnw+mL70n2ZE+jjYS42fUqcqSAAgAAAAAAAAAAAAAAAAAAAAAAAAAABXaW0tDDrP1pvdFfN8keac0tHDQvk6jvsR+r6HzbH6RlUk5NuUm7tslrWc9WelNNTqu85ZcIrKK7ioqY0itOW8zhhzLpweMN1HGdTOlgk95Ljq66i+52tvhk3Fvk3wAnaOxl8rl3SqXOKwdSUJOMk4yi3GUXvUk7NM6rA1LpFF3hMc45POPmuwuIyTSazT3HNostFV83B9sfqixjUWYAKwAAAAAAAAAAAAAAAAAAAAABqxWIjThKc3aMU2zacZrxpPNUIvJWc+suCFWTrnNN6SlXqSm+O5cFHgivhTNsIG1RMOzGMCZo/BSqyUIJuT8lzZhhsNKpKMIK8pOyR9F0NouOGgoqzm/blxb/IsjOrxE0Zq5TppOp95P+Vd3EuoxSVkklySsj0GnPr59rxglTxEasVZVYXfxxsn5OJ7oqpki2+0GlelRnxjV2e6UX/tRRaKlkjN9dM+OggzdRnsyjLk0RaTNvJc2grpgAacQAAAAAAAAAAAAAAAAAAAABpxuIVKE6kt0Yt/kj5ZiarqzlOWblJt9rOy15xuzThSW+b2pfCv1+Rx1GBmumI9jA92TfGBN0Vo91qkYfh3zfKK3kb6v9UNF7EfTyXrzVodIc+86M8jFJJLJJWS5I9NuNvQABHP68QvhZP3alN+dvqcpop5I7DXP/pKvbT/AK4nGaLe4zXTHjoaLJOEjtVKa/8AZPwz+hEosstDQvUb92L8Xl+YW+L0AGnIAAAAAAAAAAAAAAAAAAAA04yuqcJzf4Yyl4IDgNZ8T6XEz5Qewu7f53IlKBrp3k3J72232smQgYdiEDs9X8B6KntNevOzfRcEU2gMB6Se1JepCzfV8EdcajGr+AAKwAACj1zf/KVe2n/WjjNGcDqvtBq7ODl1q0l53+h8+0XpmjfL0k7OzdOm5q635ozXXHjtaLyLvQEcqkusV4K/1OSwumsPP1Y1FGfuVIypy8JI7DV9fdX5zk/JL6CGvFmADTkAAAAAAAAAAAAAAAAAAAUeuGI2MO48ZyjHu3v5F4cZr1ivvKNLlFyfa3ZfIlXPqlwsCbTgaMNaxc6Dw+3VjxUfWfdu87Eda6PReF9FTjHi85fEyWAacQAAAABpxdGE4SjVjGdNr1ozSlFpZ5pnyfQFGO1JxSjFzk4xW5Ju6R9P09W2MNiJ+7Qqv+VnzjVpJpSWaaujNdMLd6FhiqkKc216ykpL2ouHrZPus+abTujttHYKNCnGlC+zFZOTu99yi0DG9a/KEn8l9TpixN37AAVgAAAAAAAAAAAAAAAAAAA5L7QcPBUo1IpRrupCKmt+yk20+aOtOG+0jHKDoU97tOdl3JfJkvjWZ2uUo6UrxqeidLbhdRVRWWb6H07Qei5UNpzabko2tfJcTgcHKcp4WndbM6tN5JXTcryT4n1Qzi9dP9frgAGzbiHjdt5U47TUY3VO0n7z3d3MpcRjJz9qTfbu8CdameuqljKa3zj4piGLpvdOPicVKT5mHpLDrXwdHrnUtgq/G8Yx6NOaT8j57qxgpUnNqpNQlnC1N14KXKpTXrf/AFBrrY36Y0w5Rnh05e1Dbu8sltJW74sm6G9Wm3ZvLcldvsM37azOL3UrEzq1MQ5U9mMFGKnaaU2227KXYuL3nWlLqxH1akuckvBfqXRqeOe/QAFZAAAAAAAAAAAAAAAAACNj8ZGjHal2RjxlLkgN1arGCvJ2Rx+maNKtW9NLabUYwir2sld/NmzGY+U3eT7EtyXQhp3M10zON9BqDjKKV4u8W87MtqWmp/iSfkUc6liLPHpcQ1zrtaOlacvaexzvu8Sh0vpt1Hswuqfg5dX06FLiMY2rcCPGoOpMxPVTmHW5EL0lzZBkaSE7mewY0zfFAchpeNsVNe9Toz73tw/00X2Hj9zZ/icY52zu1lnz3fR7it1kopVaFTdeM6Us7J5qcb9n3lvjfQusJFOnHdK1mrWdmFXmh8W6avvi5NteV14HR0qiklKLumcnh8ox7PnmT9HYz0crP2G8+j5llc9Z66AAGnMAAAAAAAAAAAAAAABjOaim27JJtt7kkcRj9JPEVHP/ALccqa6c+1lnrrpHYhGjF+tUzl8Ce7vfyObw7siVvM/UqUrmaZogzKrOyI2rNN49wVoJyk9yRV6K9LJyqVlsxWUFe7lLi+xfPsJ9SltNyf7RrlLguxEVt27nqkV+Gqubc0/uvZpr37POo+jeS6K/4ibACTAkUyLBkimwJlMkQI1I3Ksl17AMMZhI1FszipR5NXIGF1dpRmpR24pb4xnOKfgy0/4lcn5GynXj2doG9ZK3Sxi2e3MJMo6XRFfbpq++Pqvu3eRNKTVuf8WPwP5/oXZqOOvQABAAAAAAAAAAAACLpTEejo1anu05NdtsgPnencb6bEVJ8FPZj8Mcv17xTlkVMJ7u8nUpmHZPps14uWVuYpSNOLnaz5BUXF1eC/bIdSKlGUXe0ouLs2nZqzs1uMZ1Ls8iwJEFutkkkklkkuRuizRA2JgSIMlUVch0FtNJftFnFWVgPT08PQPT1HiPUUbaVVrs5EhsiI2wlkBeasb6r6QX9RflPqxTtTlL3pu3Ylb53LgsctegAKyAAAAAAAAAAAUmudTZwdbrsR8Zouyh15jfB1ujpv8AnQqz18xVTd3kujUKrby7H8yRSqmHZeUKhH0tO0V1Zoo1zDTlW8afbL/KBAUzfSZBjMmUmBJTMkzUmZJgWmjoZOXN2XYv35Ew0YNepD4b+OZvA9PTw9RR6jJHiMkEeo9Z4ifofDekqwXCL25diz+dgOowFD0dOEOUVft4+ZIANOIAAAAAAAAAAAAAELTeE9Nh61LjOnJL4rZediaAPgMZ52eV8n0/bNlKpbJ70W+veiHhsVNpWpVm6lN8E37Ue5+TRQ7V1f8AEt/VczDtL1NVax7jqu1TXSXk/wBohqdzPaumuDCtVOeZYU5FSpWdnvz8v7on0ZgTEzJM0KRmpBV/o+d6cel14P8AsSUVGicSk3B7pbvi/X6Fugj1GSMUZIqPUZI8RkgPUdPq7hNiDm9893wrcVWh9GurLallTTzfvPkjq0rZLcWMav49ABWAAAAAAAAAAAAAAAAFTrNoSGNoSpS9WXtUp8YT59nBnxXF4Srh6sqNaLhVg+6S5p8T9AFPrHq7RxsLVFs1I/w6qXrR6dV0JY1nXHxRriu9fkZwkXOmNW6+ElapG8L+rUjdwffwfRlVSjGavCUZWdm4tSV+TsZdGmvQ2rNe0nddeFu9NozpXWTN/o2t6fajfSpxlk2ny4SQVpjIzUjOphJR6rmjBRAzUi2wWlN0at+k9/8AiX1KmMTbGmB01OakrxakuaaZsRz1Ki+GXZkWeCwdWo1GHpJPknJ+PIInOSW92LnRGiHVtOonGnvSeUp/kiVobVuFK06tpz4LfGL+rL81IxdfxjTgopRikkskluMgCsAAAAAAAAAAAAAAAAAAAAADGcFJNSSae9NXTOS019nmDrydSlt4St/5KD2fGO59h14B189qak4iGUZQqpL2r7Mm+q3GtapV37VFdu1H8z6MCca+dcTgdSc06mzC3BOUn+RMxepFGX8Oc4PqlJP5HVAcPlXCPUaonlUptddpfQ209Sqi31KfcpHbAcPlXO4PVKlHOpKU+iWzH8y9w+HhTWzTiorkl+7m0FS20AAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAf/Z" class="card-img-top" alt="Product">
+                <div class="card-body">
+                    <h5 class="card-title">Headphones</h5>
+                    <p class="card-text">Noise-cancelling wireless headphones.</p>
+                    <span class="badge bg-success">New</span>
+                    <h6 class="mt-2">₹3,000</h6>
+                    <button class="btn btn-primary mt-2" data-bs-toggle="modal" data-bs-target="#modal3">
+                        View Details
+                    </button>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<!-- ===== Modals ===== -->
+
+<!-- Modal 1 -->
+<div class="modal fade" id="modal1">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5>Smartphone Details</h5>
+                <button class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+            <div class="modal-body">
+                <p>6GB RAM, 128GB Storage, High-speed processor, Great camera.</p>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal 2 -->
+<div class="modal fade" id="modal2">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5>Laptop Details</h5>
+                <button class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+            <div class="modal-body">
+                <p>8GB RAM, 512GB SSD, Intel i5 processor, Full HD display.</p>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal 3 -->
+<div class="modal fade" id="modal3">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5>Headphones Details</h5>
+                <button class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+            <div class="modal-body">
+                <p>Wireless, Bluetooth 5.0, Long battery life, Deep bass sound.</p>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- ===== Footer ===== -->
+<footer class="bg-dark text-white text-center p-3">
+    <p>&copy; 2026 TechStore | All Rights Reserved</p>
+</footer>
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>
