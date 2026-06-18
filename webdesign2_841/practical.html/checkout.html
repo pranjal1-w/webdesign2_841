@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Checkout</title>
+
+<style>
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial,sans-serif;
+}
+
+body{
+background:#0f172a;
+color:white;
+display:flex;
+justify-content:center;
+align-items:center;
+height:100vh;
+}
+
+.checkout-box{
+background:#1e293b;
+padding:30px;
+border-radius:15px;
+width:400px;
+}
+
+h2{
+margin-bottom:20px;
+text-align:center;
+}
+
+input{
+width:100%;
+padding:12px;
+margin-bottom:15px;
+border:none;
+border-radius:8px;
+}
+
+button{
+width:100%;
+padding:12px;
+background:#38bdf8;
+border:none;
+border-radius:8px;
+font-weight:bold;
+cursor:pointer;
+}
+
+button:hover{
+background:#0ea5e9;
+}
+
+.success{
+display:none;
+text-align:center;
+margin-top:20px;
+color:#4ade80;
+font-size:18px;
+}
+</style>
+</head>
+<body>
+
+<div class="checkout-box">
+
+<h2>Checkout</h2>
+
+<input type="text" placeholder="Full Name">
+
+<input type="text" placeholder="Card Number">
+
+<input type="text" placeholder="Expiry MM/YY">
+
+<input type="text" placeholder="CVV">
+
+<button onclick="payNow()">
+Pay Now
+</button>
+
+<div class="success" id="success">
+✅ Payment Successful!<br><br>
+Order Placed Successfully 🎉
+</div>
+
+</div>
+
+<script>
+function payNow(){
+
+document.getElementById("success")
+.style.display = "block";
+
+setTimeout(() => {
+window.location.href = "index.html";
+},3000);
+
+}
+</script>
+
+</body>
+</html>
